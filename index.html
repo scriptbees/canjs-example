@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>CanJS Test</title>
+</head>
+<body>
+
+    <h1 class="header-h1"> Welcome to ScriptBees.</h1>
+    <div class="main-section">
+    <div id="js-main">Loaded the initial page.</div>
+    </div>
+    <div class="footer">
+        <p class="footer-text">Footer Area</p>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/CanJS/can.jquery.js"></script>
+    <script src="bower_components/CanJS/can.view.mustache.system.js"></script>
+    <script src="bower_components/CanJS/can.construct.proxy.js"></script>
+    <script src="controllers/indexController.js"></script>
+    
+    <script type="text/javascript">
+    var controllerInstance='';
+        $(document).ready(function(){
+         //  controllerInstance= new indexController('.main-section',{name:'venkat',view:'/views/load.mustache'});
+          $('#js-main').click(function(ev){
+            $(this).html('Welcome to 7Eleven.<button class="test" value="From the Mustache"></button><a class="testanchor" href="http://google.com">Test Anchor</a>');
+
+          });
+        });
+        $('.testanchor').click(function(){
+            ev.preventDefault();
+            ev.stopPropagation();
+            
+        });
+        $('.test').click(function(){
+            ev.preventDefault();
+            ev.stopPropagation();
+            console.log('test this');
+            $(el).html('Adding Test');
+        });
+        $(document).delegate('.testanchor', 'click', function(ev) {
+            ev.preventDefault();
+            ev.stopPropagation();
+            console.log('test this');
+            console.log($(this));
+            $(this).text('Adding'); 
+        });
+
+        
+    </script>
+</body>
+</html>

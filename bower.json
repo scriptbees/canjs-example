@@ -1,0 +1,23 @@
+{
+  "name": "canjs-example",
+  "homepage": "https://github.com/scriptbees/canjs-example",
+  "authors": [
+    "Venkat Dulipalli <venkatsep14@gmail.com>"
+  ],
+  "description": "Sample Project to learn more about CanJS",
+  "main": "app.js",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "CanJS": "canjs#^2.3.23"
+  }
+}
