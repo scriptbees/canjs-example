@@ -22,11 +22,18 @@ var indexController = can.Control({
     //When someone clicks on this change the View to Load Welcome to WonderWe
     console.log(el); 
     console.log(this.options.name);    
-    $(el).html(can.view(this.options.view,{}));
+    //What is Proxy and Why we use Proxy
+    var data=indexModel.getSomeData({"name":"venkat"},this.proxy('manipulateData'));
+    
     //$('.main-section').remove(); 
     //controllerInstance.destroy();
     //$('.main-section').removeData();    
     //
+  },
+  manipulateData:function(res){
+    console.log(res);
+    //Do I Normally Render the View.
+    $('#js-main').html(can.view(this.options.view,res));
   }
   
 });
